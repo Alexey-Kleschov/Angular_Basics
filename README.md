@@ -1,4 +1,6 @@
-<strong>BRANCHES:</strong> <br>
-master (components)<br>
-directives<br>
-pipes<br>
+<strong>BRANCHES:</strong><br>
+<ul>
+  <li>master (components)</li>
+  <li>directives</li>
+  <li>pipes</li>
+</ul>
