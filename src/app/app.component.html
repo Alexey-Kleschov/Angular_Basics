@@ -1,5 +1,6 @@
 <div class="container">
     <h1>Angular Components</h1>
+    <h2>Sub header</h2>
     <app-post-form
         (onAdd)='updatePost($event)'
     ></app-post-form>
@@ -7,6 +8,7 @@
     <app-post
         *ngFor = 'let post of posts; let idx = index;'
         [post] = 'post'
+        (onRemove)='removePost($event)'
     >
         <div #info>
             <small *ngIf='post.text.length > 10; else shortPost'>Too long post...</small>
