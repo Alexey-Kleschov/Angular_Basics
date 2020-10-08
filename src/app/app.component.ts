@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
+import { AppCounterService } from './services/app-counter.service';
+import { MyCounterService } from './services/my-counter.service';
 
 export interface Post {
   title: string,
@@ -9,8 +10,13 @@ export interface Post {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [MyCounterService]
 })
 export class AppComponent {
+  constructor(public myCounterService: MyCounterService){
+
+  };
+
 
 };
