@@ -4,4 +4,6 @@
   <li>directives</li>
   <li>pipes</li>
   <li>sevices</li>
+  <li>Forms</li>
+  <li>custom NgModel</li>
 </ul>
