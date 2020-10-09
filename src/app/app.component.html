@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Custom NgModel</h1>
-</div>
-
-
-
+  <app-switch [(ngModel)]='appState' (ngModelChange)='handleChange()'></app-switch>
+  <hr>
+  <p>appState: {{appState}}</p>
+</div> 

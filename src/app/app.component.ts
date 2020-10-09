@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
 
+  appState: string = 'on';
 
-
-
+  handleChange(): void{
+    console.log(this.appState);
+  };
 
 };
