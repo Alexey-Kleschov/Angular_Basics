@@ -7,4 +7,5 @@
   <li>forms</li>
   <li>custom NgModel</li>
   <li>http</li>
+  <li>routing</li>
 </ul>
