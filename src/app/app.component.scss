@@ -3,11 +3,11 @@ p {
 }
 
 input {
-  border-radius: 5px;
   &.ng-invalid.ng-touched {
-    border: 3px solid red;
+    border: 1px solid red;
   }
-  &.ng-valid.ng-touched{
-    border: 3px solid rgb(26, 231, 26);
+
+  &.ng-valid.ng-touched {
+    border: 1px solid green;
   }
 }
