@@ -8,4 +8,5 @@
   <li>custom NgModel</li>
   <li>http</li>
   <li>routing</li>
+  <li>modules</li>
 </ul>
