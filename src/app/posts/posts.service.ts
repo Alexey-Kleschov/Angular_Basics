@@ -16,5 +16,11 @@ export class PostsService {
 
   remove(id: number): Observable<any> {
     return this.http.delete<void>(`${id}`)
-  }
+  };
+
+  
+  fetchPromise(): Promise<any[]> {
+    return this.http.get<any[]>('').toPromise();
+  };
+
 }

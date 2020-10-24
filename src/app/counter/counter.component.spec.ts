@@ -1,44 +1,48 @@
-import { FormBuilder } from '@angular/forms';
-import { CounterComponent } from "./counter.component";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import {CounterComponent} from "./counter.component";
 
-describe( 'counter component', () => { 
+describe('CounterComponent', () => {
+  let component: CounterComponent;
+  let fixture: ComponentFixture<CounterComponent>;
 
-    let component: CounterComponent;
-
-    beforeEach( () => {
-        component = new CounterComponent( new FormBuilder());
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        CounterComponent
+      ]
     });
+    fixture = TestBed.createComponent(CounterComponent);
+    component = fixture.componentInstance;
+    //fixture.debugElement
+    //fixture.nativeElement    
+  });
 
-    //beforeAll, afterEach, afterAll
+  it('should be created', () => {
+    expect(component).toBeDefined();
+  });
 
-    it('should increment counter with 1', () => {
-        component.increment();
-        expect(component.counter).toBe(1);
-    });
+  it('should render counter property', () => {
+    let num = 42; 
+    component.counter = num; 
+    fixture.detectChanges();
+    let de = fixture.debugElement.query(By.css('.counter'));
+    let el: HTMLElement = de.nativeElement;
+    expect(el.textContent).toContain(num.toString());
+  });  
 
-    it('should decrement counter with 1', () => {
-        component.decrement();
-        expect(component.counter).toBe(-1);
-    });
+  it('should add green class if counter is even', () => {
+    component.counter = 6;
+    fixture.detectChanges();
+    let de = fixture.debugElement.query(By.css('.counter'));
+    let el: HTMLElement = de.nativeElement;
+    expect(el.classList.contains('green')).toBeTruthy();
+  });
 
-    it('should increment value with event emitter', () => {
-        let result = null;
-        component.counterEmitter.subscribe( value => result = value);
-        component.increment();
-        expect(result).toBe(1);
-    });
+  it('should increment counter if increment btn was clicked', () => {
+    let btn = fixture.debugElement.query(By.css('#increment'));
+    btn.triggerEventHandler('click', null);
+    expect(component.counter).toBe(1);
+  });
 
-    //Forms
-
-    it('should create form with 2 controls', () => {
-        expect(component.form.contains('login')).toBeTruthy();
-        expect(component.form.contains('email')).toBeTruthy();
-    });
-
-    it('should mark login as valid if empty value', () => {
-        const control = component.form.get('login');
-        control.setValue('');
-        expect(control.valid).toBeFalsy();
-    });
-
-});
+})
