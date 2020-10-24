@@ -10,4 +10,6 @@
   <li>routing</li>
   <li>modules</li>
   <li>additional abilities</li>
+  <li>unit tests</li>
+  <li>integration tests</li>
 </ul>
