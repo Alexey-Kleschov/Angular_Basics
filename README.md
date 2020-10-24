@@ -12,4 +12,5 @@
   <li>additional abilities</li>
   <li>unit tests</li>
   <li>integration tests</li>
+  <li>animation</li>
 </ul>
