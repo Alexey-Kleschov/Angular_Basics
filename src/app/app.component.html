@@ -1,10 +1,11 @@
 <button (click)='animate()'>Animate</button>
 <button (click)='boxState = "special"'>Set cpecial stet</button>
-
+<button (click)='visible = !visible'>Toggle visibility</button>
 <hr/>
 
 <div class="wrap">
   <div 
+  *ngIf='visible'
     class="box"
     [@box]='boxState'
   >
