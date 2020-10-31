@@ -13,4 +13,5 @@
   <li>unit tests</li>
   <li>integration tests</li>
   <li>animation</li>
+  <li>blog</li>
 </ul>
